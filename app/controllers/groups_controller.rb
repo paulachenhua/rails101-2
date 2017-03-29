@@ -1,4 +1,6 @@
 class GroupsController < ApplicationController
+  beore_action :authenticate_user! ,only: [:new]
+  
   def index
     @groups = Group.all
   end
@@ -38,7 +40,7 @@ def update
    end
 
 
-  
+
 end
 
 def destroy
